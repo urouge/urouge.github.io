@@ -1,6 +1,6 @@
 name: "Urouge"
 description: "Urouge"
-url: "http://localhost:4000/"
+url: "http://urouge.github.io/"
 paginate: 10
 markdown: rdiscount
 permalink: /:title/
