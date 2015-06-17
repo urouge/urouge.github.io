@@ -1,0 +1,9 @@
+name: "Urouge"
+description: "Urouge"
+url: "http://localhost:4000/"
+paginate: 10
+markdown: rdiscount
+permalink: /:title/
+pygments: true
+safe: true
+auto: true
