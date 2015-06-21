@@ -61,7 +61,7 @@ tag: sublime
 
 ## 总结
 
-以上是个人对 Sublime Text 一些使用技巧的总结，目前使用 Sublime + Vintage 是本人编辑文本最高效的方式，由于长期使用Vim，已经离不开hjkl的光标移动方式，在编写代码时，由于得频繁地使用ESC键和方向键，分别移动左右手至该键是一件非常消耗体力和时间的事情，根据个人习惯，我把ESC键映射成了<em>;+;</em>，也看到有其他程序员将其映射成<em>Caps Lock</em>或者<em>j+j</em>键的，符合自己的习惯就好，所以在上面的动图中经常会出现敲入";"后马上消失的现象，以下是个人在 Subime Text 中常用的 Key-Bindings，会持续在[这里](http:///)更新。
+以上是个人对 Sublime Text 一些使用技巧的总结，目前使用 Sublime + Vintage 是本人编辑文本最高效的方式，由于长期使用Vim，已经离不开hjkl的光标移动方式，在编写代码时，由于得频繁地使用ESC键和方向键，分别移动左右手至该键是一件非常消耗体力和时间的事情，根据个人习惯，我把ESC键映射成了<em>;+;</em>，也看到有其他程序员将其映射成<em>Caps Lock</em>或者<em>j+j</em>键的，符合自己的习惯就好，所以在上面的动图中经常会出现敲入";"后马上消失的现象，以下是个人在 Subime Text 中常用的 Key-Bindings，会持续在[这里](https://github.com/lattespirit/default.sublime-keymap)更新。
 
 <pre><code class="highliter">
   [
