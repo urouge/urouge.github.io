@@ -7,4 +7,4 @@ permalink: /:title/
 pygments: true
 safe: true
 auto: true
-duoshuo: urouge
+disqus: urouge
