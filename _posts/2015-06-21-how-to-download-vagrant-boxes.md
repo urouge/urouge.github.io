@@ -10,7 +10,7 @@ tag: vagrant
 
 我们通常是在终端中使用如下命令生成Vagrantfile和添加box名，这里用的是<em>laravel/homestead</em>，一个PHP框架推荐使用的环境，Linux 发行版是Ubuntu 14.04，里面安装了PHP 5.6,Nginx,MySQL,Node,Redis等
 <pre><code class="highlighter">
-  vagrant init laragel/homestead
+  vagrant init laravel/homestead
   vagrant up
 </code></pre>
 屏幕中会显示类似下面的信息
