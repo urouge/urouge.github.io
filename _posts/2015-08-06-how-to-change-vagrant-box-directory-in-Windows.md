@@ -11,16 +11,22 @@ tag: vagrant
 
 * 永久设置**用户**的环境变量
 
-<pre><code class="highlighter">setx VAGRANT_HOME "/your/path"</code></pre>
+<pre><code class="highliter">
+setx VAGRANT_HOME "/your/path"
+</code></pre>
 
 * 永久设置**系统**的环境变量
 
-<pre><code class="highlighter">setx VAGRANT_HOME "/your/path" /M</code></pre>
+<pre><code class="highliter">
+setx VAGRANT_HOME "/your/path" /M
+</code></pre>
 
 ##临时设置环境变量
 这样的方式只是临时性地将环境变量写入session,每次要打开新终端执行vagrant相关命令如重启关闭销毁等命令之前都需要敲设置一遍
 
-<pre><code class="highlighter">set VAGRANT_HOME="/your/path"</code></pre>
+<pre><code class="highliter">
+set VAGRANT_HOME="/your/path"
+</code></pre>
 
 对于以上设置的环境变量可以在注册表中查看和修改，在注册表中相应的结构树是<em>HKEY_CURRENT_USER/Environment</em>
 
