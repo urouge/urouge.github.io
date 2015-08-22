@@ -57,6 +57,33 @@ tag: nginx
 * **nginx -s reload**   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重新加载配置文件，等同于**kill HUP pid**，打开一个新的worker进程，旧进程处理完请求后被关闭
 * **nginx -s reopen**   &nbsp;&nbsp;&nbsp;&nbsp;重读日志文件，等同于**kill USR1 pid**
 
-上面的 **pid** 是Nginx的主进程号，可以通过<em>ps aux |grep nginx</em>查看 master process 进程或者查看<em>logs</em>目录下的nginx.pid文件可以获得。
+上面的 **pid** 是Nginx的主进程号，可以通过 **ps aux |grep nginx **查看 master process 进程或者查看Nginx安装目录下的<em>logs</em>目录下的nginx.pid文件可以获得。也可以在命令行中用 **cat /usr/local/nginx/logs/nginx.pid **代替。
 
+##测试配置文件
 
+在修改完配置文件后，如需检测配置文件的语法是否正确，可以通过以下命令进行检测：
+<pre><code class="highlighter">
+  /usr/local/nginx/sbin/nginx –t
+</code></pre>
+配置文件语法通过则提示成功，若有错误则会提示在哪个地方出现错误。值得注意的是，在线上环境直接测试正在使用的配置文件是不恰当的，这种情况通过 -c 参数测试另外一个配置文件，命令如下:
+<pre><code class="highlighter">
+  /usr/local/nginx/sbin/nginx -t -c /your/testconf/path/nginx.conf
+</code></pre>
+测试确认通过后可执行完成线上环境的配置文件修改。
+<pre><code class="highlighter">
+  cp -i /your/testconf/path/nginx.conf /usr/local/nginx/conf/nginx.conf
+
+  /usr/local/nginx/sbin/nginx -s reload
+</code></pre>
+
+##平滑升级 Nginx
+在升级Nginx过程中经常会有这样的操作，关闭服务器，替换sbin目录下的二进制文件，重新开启服务器，这对于业务不多的网站来说是可行的，但是对于大网站来说会导致大量的连接丢失和业务中断，Nginx提供了一个机制允许在替换二进制文件的过程中保证不丢失连接。
+在上面提到过kill 命令后加上信号量和pid可对 Nginx 进行控制，这里需要**USR2**和**WINCH**这两个信号量，具体过程如下：
+
+  1. 用新的二进制文件替换安装目录下的文件<em>/usr/local/nginx/sbin/nginx</em>
+  2. 执行命令**cat /usr/local/nginx/logs/nginx.pid**查看pid进程号
+  3. 执行命令**kill USR2 pid**，初始化升级，保持旧的 .pid 文件和启用新的nginx二进制文件
+  4. 执行命令**kill WINCH pid**，关闭旧的 worker progresses
+  5. 确保所有的 worker progresses 都关闭之后，执行命令**kill QUIT pid**
+
+至此，Nginx已经平滑地升级成功。
