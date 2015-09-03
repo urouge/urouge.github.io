@@ -52,4 +52,36 @@ tag: php,php-fpm,pecl,nginx
 </code></pre>
 输入命令之后就可以在浏览器中输入 ip:port 访问路径中的文件了，此外还可以通过 **-t** 参数指定根目录。
 
-未完待续。。。
+##使用 PECL
+<a href="http://pecl.php.net" target="_blank">PECL</a>(PHP Extension Community Library)是一个PHP扩展库，简化了我们安装扩展库的工作。
+
+**手动编译**扩展的过程一般是在PECL官网搜索并下载扩展库文件后，用phpize工具进行编译安装。以redis扩展为例，过程如下：
+
+  1. 在官网搜索后得到redis扩展源码的下载主页是 **http://pecl.php.net/package/redis**
+  2. 下载并解压源文件，这里是[redis-2.2.7.tgz](http://pecl.php.net/get/redis-2.2.7.tgz)
+  3. 用命令解压并进入目录 **tar zxvf redis-2.2.7.tgz && cd redis-2.2.7**
+  4. 使用PHP安装二进制目录下的 phpize 生成 configure 等编译所需文件 **/usr/local/php/bin/phpize**
+  5. 配置参数 **./configure --with-php-config=/usr/local/php/bin/php-config**
+  6. 编译并安装 **make && make install**
+
+出现类似如下提示表明编译安装成功，提示**redis.so**文件生成在扩展目录中，扩展目录路径可以在**phpinfo()**函数中或者执行 **/usr/local/php/bin/php-config** 查看 **extension_dir**，最后在**php.ini** 添加上**extension=redis.so**即可。
+<pre><code class="highlighter">
+    Build complete.
+
+    Don't forget to run 'make test'.
+    
+    Installing shared extensions:     /usr/local/php/lib/php/extensions/no-debug-non-zts-20100525/</code></pre>
+
+**使用PECL**安装扩展则简单很多，依然以redis为例：
+  
+  1. 执行命令 **/usr/local/php/bin/pecl install redis**会自动下载安装编译扩展
+  2. 出现如下提示后和手动编译中修改php.ini的操作一样添加**redis.so**
+  <pre><code class="highlighter">
+    Build process completed successfully
+    Installing '/usr/local/php/lib/php/extensions/no-debug-non-zts-20100525/redis.so'
+    install ok: channel://pecl.php.net/redis-2.2.7
+    configuration option "php_ini" is not set to php.ini location
+    You should add "extension=redis.so" to php.ini
+  </code></pre>
+
+[官网PECL文档](http://php.net/manual/zh/install.pecl.php)还有更多有关下载和安装PECL的方法，在这里不做搬运工作了，官网写得很明白，官方的文档是我们学习的第一手资料，也常常被人们忽略。
