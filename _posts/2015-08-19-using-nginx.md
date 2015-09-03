@@ -5,7 +5,7 @@ description:
 tag: nginx
 ---
 
-以下是一些学习使用**Nginx**的一些心得
+以下是一些学习使用**Nginx**的一些心得，相关笔记大多来自**PACKT**的《**Nginx HTTP Server, 2nd Edition**》
 
 ##安装 Nginx
 
