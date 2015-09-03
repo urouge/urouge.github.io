@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Nginx
-description: 
+description: 以下是一些学习使用Nginx的一些心得，相关笔记大多来自PACKT的《Nginx HTTP Server, 2nd Edition》
 tag: nginx
 ---
 
