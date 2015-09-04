@@ -7,7 +7,7 @@ tag: php,pecl,memcached
 
 在Linux下编译PHP的Memcached扩展的时候遇到一些问题，在这里总结一下解决的过程。
 
-一开始尝试用**PECL**快速安装扩展，在编译的过程中提示需要**libmemcached**依赖库，于是用yum安装了**libmemcached**和libmemcached-devel**，但是还是没安装成功，去PHP官网的<a href="http://php.net/manual/zh/memcached.requirements.php" target="_blannk">Memcached扩展需求页</a>看了一下，**libmemcached**依赖库的版本需要大于等于1.0.0，查了一下本机该库的版本得到如下提示：
+一开始尝试用**PECL**快速安装扩展，在编译的过程中提示需要**libmemcached**依赖库，于是用yum安装了**libmemcached**和**libmemcached-devel**，但是还是没安装成功，去PHP官网的<a href="http://php.net/manual/zh/memcached.requirements.php" target="_blannk">Memcached扩展需求页</a>看了一下，**libmemcached**依赖库的版本需要大于等于1.0.0，查了一下本机该库的版本得到如下提示：
 <pre><code class="highlighter">
 yum list installed |grep libmemcached
 libmemcached.i686                    0.31-1.1.el6              @base
