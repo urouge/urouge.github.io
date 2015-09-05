@@ -84,4 +84,6 @@ tag: php,php-fpm,pecl,nginx
     You should add "extension=redis.so" to php.ini
   </code></pre>
 
+既然提到了Redis扩展，也看到PECL的Redis扩展<a href="http://pecl.php.net/package/redis/2.2.7/windows" target="_blank">主页</a>上提供了Windows版的dll文件下载，顺便介绍一下Windows下PHP Redis扩展的安装方法。在扩展主页中根据自己PHP版本，**Zend Extension Build**信息，以及32位还是64位的信息下载相应的Redis的动态链接库即.dll文件，此外，还需要下载**php_igbinary.dll**扩展，官网提供了Windows下PECL的<a href="http://windows.php.net/downloads/pecl/releases/" target="_blank">下载地址</a>，在这里搜索igbinary下载对应的版本(上面提到的php_redis.dll也可以在这里下载)，将这两个文件放到PHP扩展目录中，并在php.ini中添加**extension=php_igbinary.dll**和**extension=php_redis.dll**这两句，重启即可。更多的参考信息在<a href="https://github.com/phpredis/phpredis/issues/213#issuecomment-11361242" target="_blank">这里</a>。
+
 [官网PECL文档](http://php.net/manual/zh/install.pecl.php)还有更多有关下载和安装PECL的方法，在这里不做搬运工作了，官网写得很明白，官方的文档是我们学习的第一手资料，也常常被人们忽略。

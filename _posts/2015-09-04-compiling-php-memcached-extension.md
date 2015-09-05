@@ -27,4 +27,5 @@ configure: error: no, sasl.h is not available. Run configure with --disable-memc
   3. 执行命令**./configure --with-php-config=/usr/local/php/bin/php-config --with-libmemcached-dir=/usr/local/libmemcached --disable-memcached-sasl**
   4. 执行命令**make && make install** 会在PHP扩展目录生成memcached.so
   5. 在php.ini文件添加**extension=memcached.so** 即可
+  
 上面的步骤适用于平时我们手动安装扩展，这次安装memcached扩展遇到问题并顺利解决再次说明了官方文档是第一手最好的资料。
