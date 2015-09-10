@@ -21,7 +21,7 @@ mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` vagrant /vagrant
 
 系统是可以ssh过去的，唯一的问题只是如提示所说的挂载共享文件夹出现错误，除了共享文件夹不能使用外，带来的另一个问题是在启动系统的过程中需要消耗大量的时间，这是必须要解决的，于是我进入系统后尝试手动挂载，但是出现的如下提示：
 <pre><code class="highlighter">
-# mount -t vboxsf vagrant_data /vagrant_data
+# mount -t vboxsf vagrant /vagrant
 /sbin/mount.vboxsf: mounting failed with the error: No such device
 </code></pre>
 
