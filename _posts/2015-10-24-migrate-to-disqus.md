@@ -14,7 +14,7 @@ tag: duoshuo,disqus
 经过一番折腾用PHP写出了以下迁移评论的程序，使用过程如下：
 
 1. 在多说后台下载评论文件，默认文件名是 **export.json**;
-2. 下载文件**migrate.php**，位置与**export.json**同级;
+2. 下载文件<a href="{{ site.url }}/assets/migrate.php">**migrate.php**</a>，位置与**export.json**同级;
 3. 打开终端，进入文件 **migrate.php** 所在目录，执行 **php -f migrate.php** 即可在同级目录生成 **disqus.xml** 文件，前提是将 php 的可执行程序添加至环境变量;
 4. 在 Disqus 后台选择**Generic(WXR)**导入即可，地址是<br />https://{你的站点名}.disqus.com/admin/discussions/import/platform/wordpress/
 
