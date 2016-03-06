@@ -63,7 +63,7 @@ $xml->startDocument('1.0', 'UTF-8', 'yes');
 				$xml->startElement('item');
 					$xml->writeElement('title', $threadsValue['title']);
 					$xml->writeElement('link', $threadsValue['url']);
-					$xml->w riteElement('wp:content');
+					$xml->writeElement('wp:content');
 					$xml->writeElement('dsq:thread_identifier', $threadsValue['thread_key']);
 					$xml->writeElement('wp:post_date_gmt', date('Y-m-d H:i:s', strtotime($threadsValue['created_at'])));
 					$xml->writeElement('comment_status', 'open');
