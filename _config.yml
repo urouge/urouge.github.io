@@ -1,7 +1,7 @@
 name: "Urouge"
 description: "Urouge"
 url: "http://urouge.github.io"
-paginate: 10
+paginate: 20
 markdown: rdiscount
 permalink: /:title/
 pygments: true
