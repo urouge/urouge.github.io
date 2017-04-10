@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="content">
   <div id="post">
-    {% for post in paginator.posts limit: 10%}
+    {% for post in paginator.posts limit: 20%}
       <ul class="unstyled">
         <li>
           <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>&nbsp&nbsp
