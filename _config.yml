@@ -1,6 +1,6 @@
 name: "Urouge"
 description: "Urouge"
-url: "http://urouge.github.io"
+url: "https://urouge.me"
 paginate: 20
 markdown: kramdown
 permalink: /:title/
