@@ -2,9 +2,8 @@ name: "Urouge"
 description: "Urouge"
 url: "http://urouge.github.io"
 paginate: 20
-markdown: rdiscount
+markdown: kramdown
 permalink: /:title/
-pygments: true
 safe: true
 auto: true
 disqus: urouge
