@@ -4,6 +4,5 @@ url: "https://urouge.me"
 paginate: 20
 markdown: kramdown
 permalink: /:title/
-safe: true
-auto: true
 disqus: urouge
+gems: [jekyll-paginate]
