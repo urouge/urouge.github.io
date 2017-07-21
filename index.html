@@ -7,7 +7,7 @@ layout: default
       <ul class="unstyled">
         <li>
           <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>&nbsp&nbsp
-          <a href="http://urouge.github.io{{ post.url }}">{{post.title}}</a>
+          <a href="{{ site.url }}{{ post.url }}">{{post.title}}</a>
         </li>
       </ul>
     {% endfor %}
